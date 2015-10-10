@@ -1,0 +1,24 @@
+var chain = {
+	0xfff: {
+		'count': 2,
+		'right': [{
+			'val': 0xbbb,
+			'count': 1
+		}, 
+		{
+			'val': 0xcac,
+			'count': 1
+		}],
+		'down': [0xfff, 0xeee]
+	},
+}
+
+cur = 0xfff
+rand = random(0, 1)
+for right in chain.cur.right
+	if rand < right.count / chain.cur.count
+		nextRight = chain.cur.right.val
+		break
+	rand = rand - right.count / count
+
+	
